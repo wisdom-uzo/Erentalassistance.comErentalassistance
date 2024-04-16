@@ -1,0 +1,14 @@
+.fadeIn {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .fadeOut {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .pageContent {
+    opacity: 0; /* Initially hide the page content */
+  }
+  

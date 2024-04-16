@@ -1,7 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
+'use client'
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import styles from "./Home.module.css"; // Import CSS module for styling
+
 
 export default function Home() {
+
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Set a timer for 5 seconds
+    const timer = setTimeout(() => {
+      setLoading(false); // Hide the loading screen after 5 seconds
+    }, 2000);
+
+    // Clear the timer when the component unmounts or when the loading state changes
+    return () => clearTimeout(timer);
+  }, []); // Run this effect only once when the component mounts
+
+
+  const fadeInClass = loading ? styles.fadeOut : styles.fadeIn; // Conditional class based on loading state
 
   const data = [
     {
@@ -49,9 +69,17 @@ export default function Home() {
     
   ]
   return (
-    <main className="">
+    <>
+    {loading ? (
+      // Loading screen markup
+      <div className="bg-[rgb(4,30,55)] flex justify-center items-center w-screen h-screen">
+      <img src="/bitget.png" alt="loading" className="animate-spin-slow" />
+     </div>
+
+    ) : ( 
+      <main >
       
-      <div style={{backgroundImage:'url(bg_page_title.png)'}} className="w-full  pb-10 min-h-[320px] border-[#282E3B] text-right">
+      <div style={{backgroundImage:'url(bg_page_title.png)', backgroundSize:'auto 100%', backgroundPosition:'top right'}} className="w-full  pb-10 min-h-[320px] border-[#282E3B]">
 
       <div className="h-[62px] bg-[#1D2330] overflow-hidden box-border border-1 ">
           <div className="">
@@ -60,26 +88,29 @@ export default function Home() {
       </div>
 
 
+    <div className="px-5">
+      <div className="flex justify-center items-center my-5">
+        <img src="/bitget.png" width="80px" height="80px" alt="  DEFI PROTOCOL"/>
 
-        <div className="flex justify-center items-center">
-            <div className="page-title page-title--wrap">
-              <div align="center">
-                        <img src="/bitget.png" width="80px" height="80px" alt="  DEFI PROTOCOL"/>
-                    </div>
+      </div>
+                   
 
-                    <h1 className="text-[#fff] font-[500] text-[40px] font-[sans-serif] text-center">BITGET RESOLVE PROTOCOL </h1>
+        <h1 className="text-[#fff] font-[500] text-[20px] md:text-[40px] font-[sans-serif] text-center">BITGET RESOLVE PROTOCOL </h1>
 
-                    <ul className="breadcrumb">
-                        <li><span className="breadcrumb-entry">AUTHENTICATION </span></li></ul>
+        <p className="text-center text-white">AUTHENTICATION </p>
+
+        <div className="h-2 bg-[#e9d16f] mt-5 mb-6"></div>
 
 
-                        <div className="cms-button-wrapper text-left mt-8" id="cms-button-3">
+                     
 
-                          <a href="/error" className="anch">
-                              RESOLVE    </a>
-</div>
-</div>
-            </div>
+      <div className="md:text-center"><a href="/error" className="bg-[rgb(4,30,55)] text-white border border-white rounded-full shadow-md py-3 px-7"> RESOLVE </a></div>
+
+
+    </div>
+
+       
+                     
 
        
 
@@ -141,6 +172,9 @@ Copyright @2024 Bitget Resolve Protocol
 
 
     </main>
+    )}
+    
+    </>
   );
 }
 
