@@ -25,3 +25,164 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.page-title--wrap {
+  display: inline-block;
+  border-left: 10px solid #e9d16f;
+  padding-left: 35px;
+  background: rgba(255, 255, 255, .02);
+  padding-right: 35px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.page-title .breadcrumb li {
+  display: inline-block;
+}
+ul li, ol li {
+  color: #777;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.anch {
+  transition: all 0.5s ease 0s; 
+  background: rgb(4, 30, 55); 
+  font-size: 15px; 
+  color: rgb(255, 255, 255); 
+  width: 170px; 
+  border: 1px solid #fff; 
+  padding: 5px;
+  border-radius: 50px;
+
+
+  height: 50px;
+  line-height: 48px;
+  padding: 0 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+.lement_p {
+  color: #27415a;
+}
+
+
+.bl_page404__wrapper {
+  position: relative;
+  width: 100%;
+  margin: 10px auto;
+  max-width: 440px;
+  min-height: 410px;
+  text-align: center;
+}
+.bl_page404__el1,
+.bl_page404__el2,
+.bl_page404__el3 {
+  position: absolute;
+  opacity: 1;
+  animation-duration: 4s; /* Make the animation faster */
+  z-index: 2;
+}
+
+.bl_page404__el1 {
+  top: 50%;
+  left: calc(50% - 150px); /* Adjust the left position for separation */
+  transform: translate(-50%, -50%);
+  animation: moveAndFade 3s linear infinite;
+  width: 84px;
+  height: 106px;
+  background: url(https://github.com/BlackStar1991/Pictures-for-sharing-/blob/master/404/bigBoom/404-1.png?raw=true) 50% 50% no-repeat;
+}
+
+.bl_page404__el2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveAndFade 3s linear infinite 1s; /* Delay the animation start by 1s */
+  width: 184px;
+  height: 106px;
+  background: url(https://github.com/BlackStar1991/Pictures-for-sharing-/blob/master/404/bigBoom/404-2.png?raw=true) 50% 50% no-repeat;
+}
+
+.bl_page404__el3 {
+  top: 50%;
+  left: calc(50% + 150px); /* Adjust the left position for separation */
+  transform: translate(-50%, -50%);
+  animation: moveAndFade 3s linear infinite 2s; /* Delay the animation start by 2s */
+  width: 284px;
+  height: 106px;
+  background: url(https://github.com/BlackStar1991/Pictures-for-sharing-/blob/master/404/bigBoom/404-3.png?raw=true) 50% 50% no-repeat;
+}
+
+@keyframes moveAndFade {
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+  25% {
+    top: 20%;
+    opacity: 1;
+  }
+  75% {
+    top: -20%;
+    opacity: 1;
+  }
+  100% {
+    top: -50%;
+    opacity: 0;
+  }
+}
+
+
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  animation: colorSlide 15s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+
+@keyframes colorSlide {
+  0% {
+    background-color: #152a68;
+}
+25% {
+    background-color: royalblue;
+}
+50% {
+    background-color: seagreen;
+}
+75% {
+    background-color: tomato;
+}
+100% {
+    background-color: #152a68;
+}
+}
+
+
+
+
+
+.fade-in {
+  animation: fadeIn 2s ease infinite;
+}
+
+#digit1 {
+  animation-delay: 200ms;
+}
