@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css"; // Import CSS module for styling
+import Head from "next/head";
 
 
 export default function Home() {
@@ -78,6 +79,8 @@ export default function Home() {
 
     ) : ( 
       <main >
+
+
       
       <div style={{backgroundImage:'url(bg_page_title.png)', backgroundSize:'auto 100%', backgroundPosition:'top right'}} className="w-full  pb-10 min-h-[320px] border-[#282E3B]">
 
